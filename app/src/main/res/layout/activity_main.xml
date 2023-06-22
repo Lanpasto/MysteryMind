@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.classofscreen.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/todo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/AppButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/horoscope"
+            android:textColor="#03A9F4"
+            android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/AppButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:backgroundTintMode="add"
+            android:text="@string/testOnZodiac"
+            android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/AppButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/similarSoul"
+            android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/AppButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="77dp"
+            android:text="@string/taskForDay" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

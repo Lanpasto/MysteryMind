@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/todo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fon2" />
+
+    <TextView
+        android:id="@+id/karma_level_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Рівень карми:"
+        android:textSize="18sp" />
+
+    <ProgressBar
+        android:id="@+id/karma_level_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/karma_level_text"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/karma_level_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/karma_level_seekbar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="%"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/notify_checkbox_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/karma_level_percent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="342dp"
+        android:text=""
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/start"
+        style="@style/YinYangButton"
+        android:layout_width="142dp"
+        android:layout_height="128dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="137dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+<!--    <Button
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/start"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="155dp"
+        android:visibility="invisible" />-->
+
+
+    <RelativeLayout
+        android:layout_width="354dp"
+        android:layout_height="250dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="258dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="338dp"
+            android:layout_height="216dp"
+            app:srcCompat="@drawable/bbb" />
+
+        <TextView
+            android:id="@+id/assignmentText"
+            android:layout_width="140dp"
+            android:layout_height="83dp"
+            android:layout_alignStart="@id/imageView3"
+            android:layout_alignTop="@id/imageView3"
+            android:layout_alignEnd="@id/imageView3"
+            android:layout_alignBottom="@id/imageView3"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="67dp"
+            android:layout_marginEnd="89dp"
+            android:layout_marginBottom="66dp"
+            android:background="@color/transparentWhite"
+            android:gravity="center"
+            android:text="TextView" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="183dp"
+        android:layout_height="266dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="228dp"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:id="@+id/refuse"
+            style="@style/SemiCircularButton1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="38dp"
+            android:layout_marginBottom="0dp"
+
+            android:text="Відмовитися" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="178dp"
+        android:layout_height="266dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="236dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="-1dp">
+
+        <Button
+            android:id="@+id/complete"
+            style="@style/SemiCircularButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="-6dp"
+            android:text="Завершити"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+
+
+
+
+
+

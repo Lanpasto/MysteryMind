@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MysteryMind</string>
+    <string name="splash">Splash</string>
+    <string name="horoscope">Гороскоп\n</string>
+    <string name="similarSoul">Аналіз пари\n на сумісність</string>
+    <string name="testOnZodiac">Визначення \nсхожості \nз людиною\n</string>
+    <string name="taskForDay">Завдання для \nпокращення \nкарми\n</string>
+    <string name="choose_sign">Оберіть знак зодіаку</string>
+    <string name="select_zodiac_sign">зодіак\n</string>
+    <string name="name">Ім\'я</string>
+    <string name="todo">TODO</string>
+    <string name="button">Button</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#60FFFFFF" /> <!-- Колір заднього фону з прозорістю 50% (80 - прозорість в hex) -->
+            <corners android:radius="16dp" /> <!-- Заокруглені кути -->
+            <stroke android:color="#80000000" /> <!-- Колір коричневої рамки з прозорістю 50% (80 - прозорість в hex) -->
+            <stroke android:width="2dp" />
+        </shape>
+    </item>
+</selector>

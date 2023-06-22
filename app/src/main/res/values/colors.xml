@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="pink">#FF4081</color>
+    <color name="progress_bar_color">#ff00ff</color>
+    <color name="buttonBackground">#FF4081</color>
+    <color name="transparentWhite">#95000000</color> <!-- Значення прозорості (33) та колір (FFFFFF) -->
+
+    <!-- Інші кольори вашого проекту -->
+        <color name="button_text_color">#FFFFFF</color> <!-- Тілесний колір тексту -->
+        <color name="button_background_color">#800080</color> <!-- Фіолетовий колір фону кнопки -->
+        <color name="button_stroke_color">#C0C0C0</color>
+    <color name="holo_red_dark">#F44336</color> <!-- Колір обводки кнопки -->
+
+
+</resources>

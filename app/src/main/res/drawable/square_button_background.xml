@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F5F5F5" /> <!-- Світлий колір фону кнопки -->
+    <corners android:radius="0dp" /> <!-- Закругленість кутів кнопки (0dp - квадратна) -->
+    <stroke
+        android:color="#CCCCCC" /> <!-- Світлий колір рамки кнопки -->
+    <stroke
+        android:width="6dp" />
+</shape>
+
+
+
+
