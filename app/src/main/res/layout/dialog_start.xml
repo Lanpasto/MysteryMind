@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="213dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/chakra" />
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="283dp"
+        android:gravity="center"
+        android:fontFamily="@font/karma_dialog_font"
+
+        android:text="Оберіть завдання залежно від можливостей і настрою.
+         Завершіть цей процес виконання, навіть якщо зустрінете відмову.
+         Спробуйте виконати 10 завдань підряд, це допоможе вам знайти гармонію
+         з собою."
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/button_font"
+
         android:text="Рівень карми:"
         android:textSize="18sp" />
 
@@ -36,6 +38,8 @@
         android:id="@+id/karma_level_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/button_font"
+
         android:layout_below="@+id/karma_level_seekbar"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="8dp"
@@ -48,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/karma_level_percent"
+        android:fontFamily="@font/button_font"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="21dp"
@@ -68,17 +73,6 @@
         android:layout_marginEnd="137dp"
         tools:ignore="SpeakableTextPresentCheck" />
 
-<!--    <Button
-        android:id="@+id/finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/start"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="-49dp"
-        android:layout_marginEnd="155dp"
-        android:visibility="invisible" />-->
 
 
     <RelativeLayout
@@ -100,6 +94,8 @@
             android:id="@+id/assignmentText"
             android:layout_width="140dp"
             android:layout_height="83dp"
+            android:fontFamily="@font/text_font"
+
             android:layout_alignStart="@id/imageView3"
             android:layout_alignTop="@id/imageView3"
             android:layout_alignEnd="@id/imageView3"
@@ -108,9 +104,9 @@
             android:layout_marginTop="67dp"
             android:layout_marginEnd="89dp"
             android:layout_marginBottom="66dp"
-            android:background="@color/transparentWhite"
+            android:background="@color/transparentBlack"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -129,6 +125,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
+            android:fontFamily="@font/button_font"
+
             android:layout_alignParentEnd="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
@@ -151,6 +149,8 @@
         <Button
             android:id="@+id/complete"
             style="@style/SemiCircularButton"
+            android:fontFamily="@font/button_font"
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"

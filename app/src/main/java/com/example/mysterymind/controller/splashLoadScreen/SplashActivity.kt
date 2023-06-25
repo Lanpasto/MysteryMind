@@ -7,8 +7,8 @@ import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mysterymind.controller.classofscreen.MainActivity
 import com.example.mysterymind.R
+import com.example.mysterymind.controller.classofscreen.MainActivity
 import com.example.mysterymind.databinding.ActivitySplashBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,8 +36,8 @@ class SplashActivity : AppCompatActivity() {
             Animation.RELATIVE_TO_SELF, 0.5f // Центр масштабування по вертикалі
         )
 
-        scaleAnimation.duration = 4000 // Тривалість анімації (4 секунди)
-        scaleAnimation.fillAfter = true // Залишити зображення у збільшеному масштабі після анімації
+        scaleAnimation.duration = 4000
+        scaleAnimation.fillAfter = true
 
         imageView.startAnimation(scaleAnimation)
 

@@ -1,103 +1,89 @@
 package com.example.mysterymind.listener
 
+
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Handler
 import android.os.IBinder
-import android.os.Looper
-import android.util.Log
-import com.example.mysterymind.data.AppDatabase
-import com.example.mysterymind.model.entity.RandomEvent
-import com.example.mysterymind.model.dao.RandomEventDao
-import com.example.mysterymind.model.entity.TodayPredict
-import com.example.mysterymind.model.dao.TodayPredictDao
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import androidx.core.app.NotificationCompat
+import com.example.mysterymind.R
+import com.example.mysterymind.controller.classofscreen.MainActivity
 
+@Suppress("DEPRECATION")
 class MyService : Service() {
-    private lateinit var randomEventDao: RandomEventDao
-    private lateinit var todayPredictDao: TodayPredictDao
-    private val handler = Handler(Looper.getMainLooper())
-    private val dataCopyRunnable = object : Runnable {
+    private val handler = Handler()
+    private lateinit var notificationManager: NotificationManager
+    private val notificationId = 1
+    private val channelId = "MyChannelId"
+
+    private val maxNotifications = 2 // Кількість повідомлень, які потрібно відправити
+    private var notificationCount = 0 // Лічильник відправлених повідомлень
+
+    private val message = object : Runnable {
         override fun run() {
-            copyData()
-            scheduleDataCopy() // Копіювати знову через 24 години
+            if (notificationCount < maxNotifications) {
+                sendNotification("Не забувайте, що ви можете у нас покаятися")
+                notificationCount++
+                handler.postDelayed(this, 20000)
+            }
         }
     }
 
     override fun onCreate() {
         super.onCreate()
-        // Ініціалізуйте необхідні екземпляри DAO або інші залежності тут
-        val database = AppDatabase.getInstance(this)
-        randomEventDao = database.randomEventDao()
-        todayPredictDao = database.todayPredictDao()
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        createNotificationChannel()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        Log.d("MyService", "Service started")
-        // Планування запуску копіювання даних
-        scheduleDataCopy()
+        handler.post(message)
         return START_STICKY
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        // Метод onBind() має бути перевизначений, якщо ви створюєте прив'язану службу
         return null
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        // Зупинити розклад копіювання даних при знищенні служби
-        handler.removeCallbacks(dataCopyRunnable)
+        handler.removeCallbacks(message)
     }
 
-    // Метод для планування копіювання даних через 24 години
-    private fun scheduleDataCopy() {
-        handler.removeCallbacks(dataCopyRunnable)
-        val delayMillis =  24 * 60 * 60 * 1000L // 24 години
-        handler.postDelayed(dataCopyRunnable, delayMillis)
-    }
-
-    // Метод для копіювання даних
-    private fun copyData() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val randomEvent: RandomEvent? = randomEventDao.getRandomEventByOffset(0)
-            if (randomEvent != null) {
-                val todayPredict = TodayPredict(
-                    zodiac = randomEvent.day,
-                    horoscopeText = randomEvent.horoscopeText
-                )
-                CoroutineScope(Dispatchers.IO).launch {
-                    try {
-                        val horoscopeText = "Нове значення horoscopeText" // Замініть на власне значення
-                        todayPredictDao.updateFirstTodayPredictHoroscopeText(horoscopeText)
-                        val horoscopeText1 = "Новий текст гороскопу"
-                        todayPredictDao.updateFirstRandomEventHoroscopeText(horoscopeText1)
-                        Log.d("MyService", "Перший рядок в таблиці Today_Predict оновлено успішно")
-
-                        val firstTodayPredict = todayPredictDao.getFirstTodayPredict()
-                        if (firstTodayPredict != null) {
-                            Log.d("MyService", "Перший рядок в таблиці Today_Predict: ${firstTodayPredict.toString()}")
-                        } else {
-                            Log.d("MyService", "Таблиця Today_Predict порожня")
-                        }
-                    } catch (e: Exception) {
-                        Log.e("MyService", "Помилка при оновленні першого рядка в таблиці Today_Predict: ${e.message}")
-                    }
-                }
-
-
-
-                Log.d("MyService", "Zodiac: ${todayPredict}, Horoscope Text: ${todayPredict.horoscopeText}")
-                Log.d("MyService", "Data copied successfully")
-                Log.d("MyService", "Insert successful")
-            }
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                channelId,
+                "My Channel",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+            notificationManager.createNotificationChannel(channel)
         }
     }
+
+    private fun sendNotification(message: String) {
+        val intent = Intent(this, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val notification = NotificationCompat.Builder(this, channelId)
+            .setContentTitle("Карма")
+            .setContentText(message)
+            .setSmallIcon(R.drawable.god)
+            .setContentIntent(pendingIntent)
+            .build()
+
+        notificationManager.notify(notificationId, notification)
+    }
 }
-
-
 
 
 

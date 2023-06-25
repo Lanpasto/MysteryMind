@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="transparentWhite">#95FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#FF4081</color>
     <color name="progress_bar_color">#ff00ff</color>
     <color name="buttonBackground">#FF4081</color>
-    <color name="transparentWhite">#95000000</color> <!-- Значення прозорості (33) та колір (FFFFFF) -->
+    <color name="transparentBlack">#95000000</color> <!-- Значення прозорості (33) та колір (FFFFFF) -->
 
     <!-- Інші кольори вашого проекту -->
         <color name="button_text_color">#FFFFFF</color> <!-- Тілесний колір тексту -->

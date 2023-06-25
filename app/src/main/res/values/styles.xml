@@ -6,6 +6,7 @@
         <item name="android:background">@drawable/square_button_background</item>
         <item name="android:padding">8dp</item>
         <item name="android:gravity">center</item>
+
     </style>
     <style name="SemiCircularButton" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/semi_circular_button_background</item>
@@ -17,7 +18,7 @@
         <item name="android:background">@drawable/yin_yang_button_background</item>
     </style>
     <style name="TextViewStyle">
-        <item name="android:background">@color/transparentWhite</item> <!-- Встановлення прозорого білого фону -->
+        <item name="android:background">@color/transparentBlack</item> <!-- Встановлення прозорого білого фону -->
         <item name="android:padding">8dp</item> <!-- Встановлення відступу -->
         <item name="android:layout_margin">8dp</item> <!-- Встановлення зовнішнього відступу -->
         <item name="android:gravity">center</item> <!-- Встановлення вирівнювання тексту -->
@@ -35,6 +36,10 @@
         <item name="android:windowBackground">@drawable/dialog_background_buda</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/custom_spinner_background</item>
+        <item name="android:dropDownSelector">@color/pink</item>
     </style>
 
 

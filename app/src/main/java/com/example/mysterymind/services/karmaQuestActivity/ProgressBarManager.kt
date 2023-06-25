@@ -5,16 +5,16 @@ import android.widget.TextView
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 
 
-class ProgressBarManagr(
+class ProgressBarManager(
     private val progressBar: ProgressBar,
     private val percentTextView: TextView,
     private val context: Context
 ) {
     private val sharedPreferences: SharedPreferences =
         context.getSharedPreferences("my_preferences", Context.MODE_PRIVATE)
-
     private var progress: Int = 0
 
     init {
@@ -30,6 +30,8 @@ class ProgressBarManagr(
 
         // Save the progress to SharedPreferences
         saveProgressToSharedPreferences(progress)
+
+        Log.d("ProgressBarManager", "Progress set to: $progress")
     }
 
     fun getProgress(): Int {
@@ -47,6 +49,4 @@ class ProgressBarManagr(
         editor.apply()
     }
 }
-
-
 

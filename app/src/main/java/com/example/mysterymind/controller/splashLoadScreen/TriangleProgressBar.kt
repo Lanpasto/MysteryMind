@@ -1,6 +1,7 @@
 package com.example.mysterymind.controller.splashLoadScreen
 
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
@@ -8,8 +9,6 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
-import java.lang.Math.cos
-import java.lang.Math.sin
 
 class TriangleProgressBar(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
@@ -31,6 +30,7 @@ class TriangleProgressBar(context: Context, attrs: AttributeSet) : View(context,
         }
     }
 
+    @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
@@ -39,7 +39,6 @@ class TriangleProgressBar(context: Context, attrs: AttributeSet) : View(context,
 
         val angle = progress / 100f * 360f
 
-        // Малюємо лінії, які утворюють трикутники по колу
         val trianglePath = Path()
         val centerX = width / 2
         val centerY = height / 2
@@ -55,12 +54,12 @@ class TriangleProgressBar(context: Context, attrs: AttributeSet) : View(context,
             trianglePath.reset()
             trianglePath.moveTo(centerX, centerY)
             trianglePath.lineTo(
-                centerX + radius * cos(Math.toRadians(startAngle.toDouble())).toFloat(),
-                centerY + radius * sin(Math.toRadians(startAngle.toDouble())).toFloat()
+                centerX + radius * kotlin.math.cos(Math.toRadians(startAngle.toDouble())).toFloat(),
+                centerY + radius * kotlin.math.sin(Math.toRadians(startAngle.toDouble())).toFloat()
             )
             trianglePath.lineTo(
-                centerX + radius * cos(Math.toRadians(endAngle.toDouble())).toFloat(),
-                centerY + radius * sin(Math.toRadians(endAngle.toDouble())).toFloat()
+                centerX + radius * kotlin.math.cos(Math.toRadians(endAngle.toDouble())).toFloat(),
+                centerY + radius * kotlin.math.sin(Math.toRadians(endAngle.toDouble())).toFloat()
             )
             trianglePath.close()
 

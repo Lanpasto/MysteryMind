@@ -18,6 +18,8 @@
         android:id="@+id/dialog_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/karma_dialog_font"
+
         android:text="Ви очистили карму\nі перейшли на інший духовний рівень"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/black"

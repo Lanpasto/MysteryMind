@@ -2,14 +2,14 @@ package com.example.mysterymind.services.horoscopeactivity
 
 import android.content.Context
 import android.util.Log
-import android.widget.Spinner
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import com.example.mysterymind.R
+import com.example.mysterymind.controller.classofscreen.HoroscopeActivity
+import com.example.mysterymind.controller.splashLoadScreen.CustomSpinner
 import com.example.mysterymind.data.AppDatabase
 import com.example.mysterymind.model.dao.HoroscopeDao
 import com.example.mysterymind.model.entity.RandomEvent
-import com.example.mysterymind.controller.classofscreen.HoroscopeActivity
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -21,9 +21,9 @@ class HoroscopeProcessor(private val context: Context) {
         horoscopeDao = database.horoscopeDao()
     }
 
-    fun onButtonClicked(callback: (RandomEvent?) -> Unit) {
+    fun onButtonClicked(selectedDateStr: String, callback: (RandomEvent?) -> Unit) {
         val selectedSign = getSelectedSign()
-        val selectedDay = getSelectedDay()
+        val selectedDay = getSelectedDay(selectedDateStr)
 
         val selectedDao = getSelectedDao(selectedSign, selectedDay)
         selectedDao?.observe(context as LifecycleOwner) { events ->
@@ -33,16 +33,15 @@ class HoroscopeProcessor(private val context: Context) {
     }
 
     private fun getSelectedSign(): String {
-        val spinner = (context as HoroscopeActivity).findViewById<Spinner>(R.id.spinner)
-        return spinner.selectedItem.toString()
+        val spinner = (context as HoroscopeActivity).findViewById<CustomSpinner>(R.id.spinner)
+        val selectedItem = spinner.selectedItem as CustomSpinner.SpinnerItem
+        return selectedItem.text
     }
 
-    private fun getSelectedDay(): String {
-        val selectedDateStr = "01/01" // Рядок дати у форматі "dd/MM"
-        val dateFormatter = SimpleDateFormat("dd/MM", Locale.getDefault())
-        val selectedDate =
-            dateFormatter.parse(selectedDateStr) // Перетворення рядка дати у об'єкт Date
-        return dateFormatter.format(selectedDate!!) // Збереження обраний день у властивості selectedDay
+    private fun getSelectedDay(selectedDateStr: String): String {
+        val dateFormatter = SimpleDateFormat("MM/dd", Locale.getDefault())
+        val selectedDate = dateFormatter.parse(selectedDateStr)
+        return dateFormatter.format(selectedDate!!)
     }
 
     private fun getSelectedDao(selectedSign: String, selectedDay: String): LiveData<List<RandomEvent>>? {

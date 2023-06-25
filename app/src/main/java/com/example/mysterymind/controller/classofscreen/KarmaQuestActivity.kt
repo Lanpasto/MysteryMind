@@ -1,18 +1,19 @@
 package com.example.mysterymind.controller.classofscreen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mysterymind.R
 import com.example.mysterymind.services.karmaQuestActivity.KarmaQuestManager
-import com.example.mysterymind.services.karmaQuestActivity.ProgressBarManagr
+import com.example.mysterymind.services.karmaQuestActivity.ProgressBarManager
 import kotlinx.coroutines.launch
 
 class KarmaQuestActivity : AppCompatActivity() {
     private lateinit var karmaQuestManager: KarmaQuestManager
-    private lateinit var progressBarManagr: ProgressBarManagr
+    private lateinit var progressBarManager: ProgressBarManager
     private lateinit var assignmentText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,18 +22,22 @@ class KarmaQuestActivity : AppCompatActivity() {
         assignmentText = findViewById(R.id.assignmentText)
         val karmaLevelProgressBar = findViewById<ProgressBar>(R.id.karma_level_seekbar)
         val karmaLevelPercent = findViewById<TextView>(R.id.karma_level_percent)
-        progressBarManagr = ProgressBarManagr(karmaLevelProgressBar, karmaLevelPercent, this)
+        progressBarManager = ProgressBarManager(karmaLevelProgressBar, karmaLevelPercent, this)
         karmaQuestManager = KarmaQuestManager(
             this,
-            progressBarManagr
-        ) // Передаємо контекст активності та progressBarManager
+            progressBarManager
+        )
+
         karmaQuestManager.restoreTextFromSharedPreferences(this, assignmentText, "saved_text")
 
         lifecycleScope.launch {
             karmaQuestManager.initializeViews(this@KarmaQuestActivity)
         }
+
+        Log.d("KarmaQuestActivity", "Activity created")
     }
 }
+
 
 
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#20FFFFFF" /> <!-- Колір з прозорістю (20% прозорості) -->
+    <stroke android:color="#2A4860" android:width="2dp" /> <!-- Червона рамка -->
+    <corners android:radius="4dp" /> <!-- Закруглені кути (додайте значення за потреби) -->
+</shape>
+

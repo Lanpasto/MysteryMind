@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class KarmaQuestManager(
-    private val context: Context, private val progressBarManagr: ProgressBarManagr
+    private val context: Context, private val progressBarManager: ProgressBarManager
 ) {
     private lateinit var karmaLevelText: TextView
     private lateinit var karmaLevelProgressBar: ProgressBar
@@ -72,6 +72,7 @@ class KarmaQuestManager(
                 }
                 // Оновити UI на головному потоці
                 if (!refuseButton.isEnabled) {
+                    showStartDialog()
                     Toast.makeText(context, "Start", Toast.LENGTH_SHORT).show()
                     // Увімкнути кнопки refuseButton і completeButton після натискання startButton
                     refuseButton.isEnabled = true
@@ -82,14 +83,12 @@ class KarmaQuestManager(
                     refuseButton.isEnabled = false
                     completeButton.isEnabled = false
                     assignmentText.text = ""
-                    progressBarManagr.setProgress(0)
+                    progressBarManager.setProgress(0)
                 }
                 saveTextToSharedPreferences(context, randomAssignment, "saved_text")
                 saveButtonStateToSharedPreferences()
             }
         }
-
-
 
         refuseButton.setOnClickListener {
             Log.d("KarmaQuestManager", "Refuse button clicked")
@@ -112,12 +111,12 @@ class KarmaQuestManager(
                     clickCount++ // Збільшуємо лічильник натискань
                 }
 
-                val currentProgress = progressBarManagr.getProgress()
+                val currentProgress = progressBarManager.getProgress()
                 if (currentProgress >= 10) {
-                    progressBarManagr.setProgress(currentProgress - 10)
+                    progressBarManager.setProgress(currentProgress - 10)
                 }
 
-                if (progressBarManagr.getProgress() >= 70) {
+                if (progressBarManager.getProgress() >= 70) {
                     completeButton.isEnabled = true
                 }
 
@@ -128,10 +127,10 @@ class KarmaQuestManager(
 
         completeButton.setOnClickListener {
             clickCount = 0
-            val currentProgress = progressBarManagr.getProgress()
+            val currentProgress = progressBarManager.getProgress()
             if (currentProgress + 10 <= 100) {
-                progressBarManagr.setProgress(currentProgress + 10)
-                if (progressBarManagr.getProgress() >= 100) {
+                progressBarManager.setProgress(currentProgress + 10)
+                if (progressBarManager.getProgress() >= 100) {
                     completeButton.isEnabled = false
                     Toast.makeText(context, "Successful", Toast.LENGTH_SHORT)
                         .show() // Виведення повідомлення "Successful"
@@ -155,6 +154,7 @@ class KarmaQuestManager(
             }
         }
 
+        Log.d("KarmaQuestManager", "Views initialized") // Логування події ініціалізації відображення
     }
 
     // Save the text value from TextView to SharedPreferences
@@ -220,14 +220,14 @@ class KarmaQuestManager(
             refuseButton.isEnabled = false
             completeButton.isEnabled = false
             assignmentText.text = ""
-            progressBarManagr.setProgress(0)
+            progressBarManager.setProgress(0)
             dialog.dismiss()
         }
         dialog.setOnCancelListener {
             refuseButton.isEnabled = false
             completeButton.isEnabled = false
             assignmentText.text = ""
-            progressBarManagr.setProgress(0)
+            progressBarManager.setProgress(0)
         }
     }
 
@@ -251,6 +251,27 @@ class KarmaQuestManager(
             dialog.dismiss()
         }
     }
+    @SuppressLint("MissingInflatedId")
+    private fun showStartDialog() {
+        val dialogBuilder = AlertDialog.Builder(context, R.style.CustomDialogStyle)
+        val inflater = LayoutInflater.from(context)
+        val dialogView = inflater.inflate(R.layout.dialog_start, null)
+        dialogBuilder.setView(dialogView)
 
+        val dialogTitle = dialogView.findViewById<TextView>(R.id.dialog_title)
+
+        dialogTitle.text = "Оберіть завдання залежно від можливостей і настрою. " +
+                "\nЗавершіть цей процес виконання, навіть якщо зустрінете відмову. " +
+                "\nСпробуйте виконати 10 завдань підряд," +
+                "\nце допоможе вам знайти гармонію з собою."
+
+        val dialog = dialogBuilder.create()
+        dialog.setCancelable(true)
+        dialog.show()
+
+
+        dialogView.setOnClickListener {
+            dialog.dismiss()
+        }
+    }
 }
-

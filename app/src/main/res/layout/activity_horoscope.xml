@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,7 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/transparentWhite"
+        android:background="@color/transparentBlack"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -23,64 +24,90 @@
             android:id="@+id/text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Оберіть свій знак зодіаку:" />
+            android:fontFamily="@font/text_font"
+            android:text="Оберіть свій знак зодіаку:"
+            android:layout_marginTop="8dp" />
 
-        <Spinner
+        <com.example.mysterymind.controller.splashLoadScreen.CustomSpinner
             android:id="@+id/spinner"
+            style="@style/CustomSpinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/zodiac_signs"
             android:minHeight="48dp"
-            android:prompt="@string/choose_sign" />
 
-        <Button
-            android:id="@+id/button"
-            style="@style/Analytic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Показати гороскоп" />
+            android:prompt="@string/choose_sign"
+            android:textColor="@color/transparentWhite"
+            android:layout_marginTop="16dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="618dp"
             android:padding="16dp">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="351dp"
-                android:layout_height="467dp"
+                android:layout_width="363dp"
+                android:layout_height="602dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
                 app:srcCompat="@drawable/bbb" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="219dp"
-                android:layout_height="120dp"
+                android:layout_width="232dp"
+                android:layout_height="137dp"
                 android:layout_alignStart="@id/imageView3"
                 android:layout_alignTop="@id/imageView3"
                 android:layout_alignEnd="@id/imageView3"
                 android:layout_alignBottom="@id/imageView3"
-                android:layout_marginStart="69dp"
-                android:layout_marginTop="169dp"
-                android:layout_marginEnd="59dp"
-                android:layout_marginBottom="177dp"
+                android:layout_marginStart="62dp"
+                android:fontFamily="@font/button_font"
+                android:layout_marginTop="223dp"
+                android:layout_marginEnd="53dp"
+                android:layout_marginBottom="226dp"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text=""
+
+                android:textSize="13dp"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="219dp"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/textView2"
                 android:layout_alignTop="@+id/imageView3"
                 android:layout_alignEnd="@id/textView2"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="94dp"
-                android:layout_marginEnd="0dp"
+                android:layout_marginStart="-23dp"
+                android:layout_marginTop="111dp"
+                android:fontFamily="@font/text_font"
+                android:layout_marginEnd="-17dp"
                 android:gravity="center"
                 android:text="Сьогодні"
                 android:textSize="32sp" />
 
+            <Button
+                android:id="@+id/button"
+                android:fontFamily="@font/button_font"
+                style="@style/Analytic"
+                android:layout_width="293dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignStart="@+id/imageView3"
+                android:layout_alignEnd="@+id/imageView3"
+                android:layout_alignBottom="@+id/imageView3"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="-58dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="10dp"
+                android:minHeight="48dp"
+                android:text="Показати гороскоп" />
         </RelativeLayout>
 
     </LinearLayout>

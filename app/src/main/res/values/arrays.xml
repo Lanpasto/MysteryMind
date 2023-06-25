@@ -14,4 +14,19 @@
         <item>Aquarius</item>
         <item>Pisces</item>
     </string-array>
+
+    <array name="zodiac_images">
+        <item>@drawable/aries</item>
+        <item>@drawable/taurus</item>
+        <item>@drawable/gemini</item>
+        <item>@drawable/cancer</item>
+        <item>@drawable/leo</item>
+        <item>@drawable/virgo</item>
+        <item>@drawable/libra</item>
+        <item>@drawable/scorpio</item>
+        <item>@drawable/sagittarius</item>
+        <item>@drawable/capricorn</item>
+        <item>@drawable/aquarius</item>
+        <item>@drawable/pisces</item>
+    </array>
 </resources>

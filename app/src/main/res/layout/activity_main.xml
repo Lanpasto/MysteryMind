@@ -27,22 +27,17 @@
             android:layout_height="48dp"
             android:text="@string/horoscope"
             android:textColor="#03A9F4"
+            android:fontFamily="@font/button_font"
             android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
 
-        <Button
-            android:id="@+id/button1"
-            style="@style/AppButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:backgroundTintMode="add"
-            android:text="@string/testOnZodiac"
-            android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
+        <!-- Відступ знизу -->
 
         <Button
             android:id="@+id/button3"
             style="@style/AppButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/button_font"
             android:text="@string/similarSoul"
             android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
 
@@ -50,11 +45,24 @@
             android:id="@+id/button2"
             style="@style/AppButtonStyle"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/button_font"
             android:layout_height="77dp"
             android:text="@string/taskForDay" />
 
+
     </LinearLayout>
 
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="1.0V"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView1"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

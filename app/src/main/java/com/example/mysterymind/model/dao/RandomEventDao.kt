@@ -1,5 +1,6 @@
 package com.example.mysterymind.model.dao
 
+
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
@@ -31,7 +32,6 @@ interface RandomEventDao {
     @Query("SELECT * FROM Random_Event ORDER BY RANDOM() LIMIT 1")
     fun getAllRandomEvents(): List<RandomEvent>
 
-    // ...
-}
 
+}
 
