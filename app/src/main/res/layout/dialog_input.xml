@@ -46,13 +46,13 @@
         <Button
             android:id="@+id/shareButton"
             android:layout_width="143dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_gravity="end|bottom"
-            android:fontFamily="@font/text_font"
-
             android:layout_marginBottom="4dp"
+
             android:background="@android:color/transparent"
             android:drawableLeft="@android:drawable/ic_menu_share"
+            android:fontFamily="@font/text_font"
 
             android:text="Поділитися"
             android:textColor="@android:color/white"

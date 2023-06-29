@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.classofscreen.MainActivity">
+    tools:context=".controllerTest.classofscreen.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/todo"
@@ -21,48 +21,63 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button_horoscope"
             style="@style/AppButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="@string/horoscope"
             android:textColor="#03A9F4"
             android:fontFamily="@font/button_font"
-            android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
-
-        <!-- Відступ знизу -->
+            android:layout_marginBottom="16dp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button_anal"
             style="@style/AppButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/button_font"
             android:text="@string/similarSoul"
-            android:layout_marginBottom="16dp" /> <!-- Відступ знизу -->
+            android:layout_marginBottom="16dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_quest"
             style="@style/AppButtonStyle"
             android:layout_width="wrap_content"
             android:fontFamily="@font/button_font"
             android:layout_height="77dp"
             android:text="@string/taskForDay" />
 
-
     </LinearLayout>
 
-
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:text="1.0V"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView1"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="ca-app-pub-8396987703990536/6324289364">
+        </com.google.android.gms.ads.AdView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.splashLoadScreen.SplashActivity"
+    tools:context=".controllerTest.splashLoadScreen.SplashActivity"
     >
 
     <RelativeLayout
@@ -14,14 +14,14 @@
         >
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
             android:src="@drawable/triangle_background" />
 
-        <com.example.mysterymind.controller.splashLoadScreen.TriangleProgressBar
+        <com.example.mysterymind.controllerTest.splashLoadScreen.TriangleProgressBar
             android:id="@+id/progressBar"
             android:layout_width="380dp"
             android:layout_height="459dp"

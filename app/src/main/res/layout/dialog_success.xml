@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="234dp"
         android:layout_height="107dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/karmasymbol" />
+        app:srcCompat="@drawable/karmasymbol"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <TextView
         android:id="@+id/dialog_title"
@@ -20,10 +23,11 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/karma_dialog_font"
 
+        android:gravity="center"
         android:text="Ви очистили карму\nі перейшли на інший духовний рівень"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:gravity="center" />
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 </LinearLayout>

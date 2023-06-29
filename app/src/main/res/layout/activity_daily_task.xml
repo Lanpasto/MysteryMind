@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
    <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/todo"
@@ -95,7 +95,6 @@
             android:layout_width="140dp"
             android:layout_height="83dp"
             android:fontFamily="@font/text_font"
-
             android:layout_alignStart="@id/imageView3"
             android:layout_alignTop="@id/imageView3"
             android:layout_alignEnd="@id/imageView3"

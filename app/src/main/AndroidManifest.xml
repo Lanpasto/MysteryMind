@@ -12,10 +12,12 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
 
 
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -32,27 +34,27 @@
 
 
         <activity
-            android:name=".controller.classofscreen.MainActivity"
+            android:name=".controllerTest.classofscreen.MainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".controller.classofscreen.AnalyticActivity"
+            android:name=".controllerTest.classofscreen.AnalyticActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".controller.classofscreen.KarmaQuestActivity"
+            android:name=".controllerTest.classofscreen.KarmaQuestActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".controller.classofscreen.HoroscopeActivity"
+            android:name=".controllerTest.classofscreen.HoroscopeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".controller.splashLoadScreen.SplashActivity"
+            android:name=".controllerTest.splashLoadScreen.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -62,6 +64,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8396987703990536~6811805728"/>
     </application>
 
 </manifest>
+    <!--
+
+    -->

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/todo"
@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
 
 
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:ignore="DisableBaselineAlignment">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -41,25 +42,27 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:fontFamily="@font/text_font"
-
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/text_font"
                     android:text="Дані про чоловіка"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <EditText
                     android:id="@+id/male_name_edittext"
                     android:layout_width="match_parent"
 
-                    android:fontFamily="@font/text_font"
                     android:layout_height="wrap_content"
                     android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZабвгдеєжзиіїйклмнопрстуфхцчшщьюяАБВГДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ"
+                    android:fontFamily="@font/text_font"
                     android:hint="@string/name"
-                    android:minHeight="48dp" />
+                    android:minHeight="48dp"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
 
-                <com.example.mysterymind.controller.splashLoadScreen.CustomSpinner
+                <com.example.mysterymind.controllerTest.splashLoadScreen.CustomSpinner
                     android:id="@+id/male_zodiac_spinner"
                     style="@style/CustomSpinnerStyle"
                     android:layout_width="match_parent"
@@ -81,10 +84,10 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:fontFamily="@font/text_font"
-
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/text_font"
                     android:gravity="end"
                     android:text="Дані про жінку"
                     android:textSize="18sp"
@@ -94,19 +97,13 @@
                     android:id="@+id/female_name_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/text_font"
                     android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZабвгдеєжзиіїйклмнопрстуфхцчшщьюяАБВГДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ"
+                    android:fontFamily="@font/text_font"
                     android:hint="@string/name"
-                    android:minHeight="48dp" />
-
-         <!--       <Spinner
-                    android:id="@+id/female_zodiac_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:entries="@array/zodiac_signs"
                     android:minHeight="48dp"
-                    android:prompt="@string/select_zodiac_sign" />-->
-                <com.example.mysterymind.controller.splashLoadScreen.CustomSpinner
+                    tools:ignore="VisualLintTextFieldSize" />
+
+                <com.example.mysterymind.controllerTest.splashLoadScreen.CustomSpinner
                     android:id="@+id/female_zodiac_spinner"
                     style="@style/CustomSpinnerStyle"
                     android:layout_width="match_parent"
@@ -122,15 +119,15 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:ignore="RedundantNamespace">
 
             <Button
-                android:fontFamily="@font/button_font"
-
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_burgundy"
+                android:fontFamily="@font/button_font"
                 android:text="Аналіз"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -139,12 +136,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
         <RelativeLayout
             android:layout_width="400dp"
             android:layout_height="600dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="16dp"
+            tools:ignore="VisualLintBounds">
 
             <com.mikhaellopez.circularprogressbar.CircularProgressBar
                 android:id="@+id/compatibilityProgressBar"
@@ -156,8 +153,7 @@
                 android:layout_marginBottom="123dp" />
 
             <TextView
-                android:fontFamily="@font/button_font"
-                android:id="@+id/textView4"
+                android:id="@+id/percentOfSimilarly"
                 android:layout_width="110dp"
                 android:layout_height="167dp"
                 android:layout_alignStart="@+id/compatibilityProgressBar"
@@ -168,6 +164,7 @@
                 android:layout_marginTop="55dp"
                 android:layout_marginEnd="90dp"
                 android:layout_marginBottom="75dp"
+                android:fontFamily="@font/button_font"
                 android:gravity="center"
                 android:text=""
                 android:textSize="90dp" />
@@ -181,8 +178,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="51dp"
-                android:fontFamily="@font/anal_font"
                 android:background="@android:color/transparent"
+                android:fontFamily="@font/anal_font"
                 android:text="Докладніше..."
                 android:textColor="@color/holo_red_dark" />
 
