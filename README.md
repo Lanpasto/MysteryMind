@@ -19,7 +19,7 @@ or pursuing personal growth through karma quests, MysteryMind offers a diverse r
 
 
 
-Dowload:
+Download:
 https://play.google.com/store/apps/details?id=com.osadchiy.mysterymind
 
 
