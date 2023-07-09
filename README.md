@@ -14,6 +14,12 @@ a journey of self-improvement. Whether you're seeking astrological guidance,unde
 or pursuing personal growth through karma quests, MysteryMind offers a diverse range of features to support your journey of self-discovery and empowerment.
 
 
+![image](https://github.com/Lanpasto/MysteryMind/assets/77079137/d9fc86b1-64a4-4368-a297-65e9dea0c84d)
+
+
+
+
+Dowload:
 https://play.google.com/store/apps/details?id=com.osadchiy.mysterymind
 
 
